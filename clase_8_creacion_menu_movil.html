@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--estos son los links de la fuentes que se van a usar en el proyecto-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root{ /*variables globales para luego invocar en el css, contiene colores y tamaños de fuentes*/
+        --white: #FFFFFF;
+        --black: #000000;
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #acd982;
+        --sm: 14px;
+        --md: 16px;
+        --lg: 18px;
+        }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;/*El nombre de la fuente que se va usar en el proyecto*/
+        }
+
+        .mobile-menu {
+            padding: 24px;
+        }
+
+        .mobile-menu a { /*estilizamos los textos de los enlaces*/
+            text-decoration: none;
+            color: var(--black);
+            font-weight: bold;            
+        }
+
+        .mobile-menu ul {
+            padding: 0;
+            margin: 24px 0 0; /*para serparar las diferentes ul le ponemos 24 px en el top, el resto va en ceros*/
+            list-style: none;                     
+        }
+        .mobile-menu ul:nth-child(1) { /*para poner una linea de separación entre la primera lista ul y la segunda*/
+            border-bottom: 1px solid var(--very-light-pink);              
+        }
+        .mobile-menu ul li {            
+            margin-bottom: 24px; /*para serparar las diferentes li*/
+            list-style: none;                     
+        }
+        .mobile-menu ul:last-child { /* con esta clase hacemos que la última lista ul vaya hasta el border inferior de la pantalla*/
+            position: absolute;
+            bottom: 0;
+        }
+
+        .email {
+            font-size: var(--sm);
+            font-weight: 300 !important; /* como ya le habíamos dicho que todos los a debían ser bold, para que reconozca esta orden, debemos poner el atributo de !importan paar que cambie el grosor del texto del email*/
+        }
+
+        .mobile-menu .sign-out { /* otra solución es agregarle la clase padre, para que quede suficientemente específico y no tener que ponerle el atributo !important como en esta vez con el color*/
+            font-size: var(--sm);
+            color: var(--hospital-green);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mobile-menu">
+        <ul>
+            <li>
+                <a href="">CATEGORIES</a>
+            </li>
+            <li>
+                <a href="">ALL</a>
+            </li>
+            <li>
+                <a href="">Clothes</a>
+            </li>
+            <li>
+                <a href="">Electronics</a>
+            </li>
+            <li>
+                <a href="">Furnitures</a>
+            </li>
+            <li>
+                <a href="">Toys</a>
+            </li>
+            <li>
+                <a href="">Others</a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a href="">My orders</a>
+            </li>
+            <li>
+                <a href="">My account</a>
+            </li>             
+        </ul>
+
+        <ul>
+            <li>
+                <a href="/" class="email">camilayakoo@gmail.com</a>
+            </li>
+            <li>
+                <a href="/" class="sign-out">Sign out</a>
+            </li>             
+        </ul>
+
+    </div>
+    
+</body>
+</html>
