@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--estos son los links de la fuentes que se van a usar en el proyecto-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root{ /*variables globales para luego invocar en el css, contiene colores y tamaños de fuentes*/
+        --white: #FFFFFF;
+        --black: #000000;
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #acd982;
+        --sm: 14px;
+        --md: 16px;
+        --lg: 18px;
+    }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;/*El nombre de la fuente que se va usar en el proyecto*/
+        }
+
+        .login {
+            display: grid; /* display establece los tipos de visualización interna y externa de un elemento.
+            grid significa cuadrícula: Una cuadrícula es un conjunto de líneas horizontales y verticales que se intersectan - un grupo define columnas y el otro filas.*/
+            place-items: center; /*permite alinear elementos a lo largo de las direcciones del bloque y en línea a la vez tanto vertical como horizontalmente; alinea y justifica*/
+            width: 100%; /*ancho de la pantalla*/
+            height: 100vh; /* % de la altura de la ventana gráfica. cuando queremos tener una imagen de fondo que ocupe todo el ancho y alto de nuestro pantalla. También cuando queremos que nuestro texto varíe de acuerdo a las medidas del dispositivo*/        
+        }
+
+        .form-container { /*tenemos tres partes: primera la del título y subtítulo; segunda la de los inputs y labels y la tercera la del button*/
+            display: grid;
+            grid-template-rows: auto 1fr auto; /*define el nombre de las líneas y las funciones de tamaño de línea de grid rows, de cada cajón de cuadrícula; la primera toma un tamaño auto la segunda de un fr(1 fr es igual a una parte del espacio disponible) y la tercera también auto.*/
+            width: 300px;
+        }
+        
+        .logo {
+            width: 150px;
+            margin-bottom: 48px; /*(margen-inferior) es la propiedad de un elemento que establece el espacio requerido en la parte 
+             inferior de un elemento*/
+            justify-self: center; /*establece la forma en que se justifica una caja dentro de su contenedor de alineación a lo largo 
+            del eje apropiado, en este caso se alinea a la derecha*/
+            display: none; /*evita que el logo se vea en pc y con la clas @media se activa para que se vea en móviles*/
+        }
+
+        .title {
+            font-size: var(--lg);
+            margin-bottom: 12px;
+            text-align: center;           
+        }
+
+        .subtitle {
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            font-weight: 300; /*establece el grosor de la fuente*/
+            margin-top: 0;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .form { /*la clase de este div contiene los labels y los inputs, con estos estilos los ponemos uno debajo del otro en columna*/
+            display: flex; /*flex hace que los elementos se ordenen en línea, uno enseguida del otro*/
+            flex-direction: column; /*el flex-direction los ordena en columna, uno debajo del otro*/
+        }
+
+        .label {
+            font-size: var(--sm);
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .input {
+            background-color: var(--text-input-field);
+            border-radius: 8px; /*redondea las puntas de una caja o contenedor, si le doy la medida de 50% y le doy color de fondo se verá un círculo*/
+            border: none;
+            height: 15px;
+            font-size: var(--md);
+            padding: 6px; /* establece el espacio de relleno requerido por todos los lados de un elemento. El área de padding es el espacio entre el contenido del elemento y su borde; también se puede establecer por separado: padding-top: 10px;   padding-right: 10px;
+            padding-bottom: 10px;   padding-left: 10px;*/
+            margin-bottom: 12px; /*margen a los inputs en la parte de abajo*/
+        }
+
+        .primary-button {
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none; /*elimina la línea de la caja del button*/
+            color: var(--white);
+            width: 100%; /*una medida relativa, toma el ancho del display*/
+            height: 30px;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .login-button {
+            margin-top: 12px; /*margen superior*/
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 640px) { /*esta función me permite manipular la visualización en móbiles, y que no afecte la visualización en pcs en este caso para que se vea el logo sólo en móbiles*/
+            .logo { 
+                display: block;/*El elemento aparece en línea pero se comporta como un elemento block. El elemento genera un cuadro de elemento de bloque.*/
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login"> <!--la clase me permite centrar todos los elementos contenidos en el div desde los styles de css-->
+        <div class="form-container">
+            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo"> 
+
+            <h1 class="title">Crear una nueva contraseña</h1>
+            <p class="subtitle">Ingrese una nueva contraseña para su cuenta</p>
+
+            <form action="/" class="form">
+                <label for="password" class="label">Contraseña</label>
+                <input type="password" id="password" placeholder="******" class="input">
+                
+                <label for="new-password" class="label">Contraseña</label>
+                <input type="password" id="new-password" placeholder="******" class="input">
+
+                <input type="submit" value="Confirm" class="primary-button login-button">
+            </form>
+        </div>
+    </div>    
+</body>
+</html>
