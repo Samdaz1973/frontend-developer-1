@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--estos son los links de la fuentes que se van a usar en el proyecto-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root{ /*variables globales para luego invocar en el css, contiene colores y tamaños de fuentes*/
+        --white: #FFFFFF;
+        --black: #000000;
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #acd982;
+        --sm: 14px;
+        --md: 16px;
+        --lg: 18px;
+    }
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;/*El nombre de la fuente que se va usar en el proyecto*/
+        }
+
+        .desktop-menu {
+            width: 100px; /*se le da tamaño de 100 px*/
+            height: auto;
+            border: 1px solid var(--very-light-pink);
+            border-radius: 6px;
+            padding: 20px 20px 0 20px;/*le ponemos un paddin en cada margen; el primero es la parte de arriba o top, el segundo sería la margen derecha; la tercera sería abajo, y lo ponemos en cero para que no se me sume al que ya tiene el de abajo y la cuarta sería la izquierda*/
+        }
+
+        .desktop-menu ul { /*estilizamos el ul, para quitarle las viñetas de punto que se ponen por defecto*/ 
+            list-style: none;
+            padding: 0; /*también le quitamos el paddin y margin que traen por defecto*/
+            margin: 0;
+        }
+
+        .desktop-menu ul li{ /*estilizamos el li*/ 
+            text-align: end; /*los alinea justificado a la derecha*/
+        }
+
+        .desktop-menu ul li:nth-child(1),
+        .desktop-menu ul li:nth-child(2){ /*estilizamos la fuente del enlace primero y segundo*/ 
+            font-weight: bold;
+        }
+
+        .desktop-menu ul li a{ /*para estilizar los textos de los enlaces*/
+            color: var(--black);
+            text-decoration: none;
+            margin-bottom: 20px; /*los elementos en linea no se le pueden aplicar margin por eso se corrige con la siguiente propiedad*/
+            display: inline-block; /*que sea inline pero que tenga características de block*/
+        }
+
+        .desktop-menu ul li:last-child{ /*estilizamos el último li*/
+            padding-top: 20px;/*para separarl de los enlaces precedentes*/
+            border-top: 1px solid var(--very-light-pink);
+        }
+
+        .desktop-menu ul li:last-child a{ /*para estilizar el texto del enlace*/
+            color: var(--hospital-green);
+            font-size: var(--sm);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="desktop-menu">
+        <ul> <!--los menús se hace con listas-->
+            <li>
+                <a href="/" class="title">My orders</a> <!--los ancor sirven como link o enlaces para llevar a otras página o url-->
+            </li>
+
+            <li>
+                <a href="/">My account</a>
+            </li>
+
+            <li>
+                <a href="/">Sing out</a>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>
